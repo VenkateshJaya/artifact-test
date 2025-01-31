@@ -2,28 +2,27 @@ name: compression-test
 run-name: Github Actions Test ${{ github.run_id }}
 on: [push]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: generate artifacts
-      run : |
-        dd if=/dev/zero of=artifact.dat  bs=1M  count=8600
-    - name: upload artifact compression 0
-      uses: actions/upload-artifact@v4
-      with:
-        name: "artifact-0"
-        path: "artifact.dat"
-        compression-level: 0
-    - name: upload artifact compression 6
-      uses: actions/upload-artifact@v4
-      with:
-        name: "artifact-6"
-        path: "artifact.dat"
-        compression-level: 6
-    - name: upload artifact compression 9
-     uses: actions/upload-artifact@v4
-      with:
-        name: "artifact-9"
-        path: "artifact.dat"
-        compression-level: 9
+  runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v2
+  - name: generate artifacts
+    run : |
+      dd if=/dev/zero of=artifact.dat  bs=1M  count=8600
+  - name: upload artifact compression 0
+    uses: actions/upload-artifact@v4
+    with:
+      name: "artifact-0"
+      path: "artifact.dat"
+      compression-level: 0
+  - name: upload artifact compression 6
+    uses: actions/upload-artifact@v4
+    with:
+      name: "artifact-6"
+      path: "artifact.dat"
+      compression-level: 6
+  - name: upload artifact compression 9
+    uses: actions/upload-artifact@v4
+    with:
+      name: "artifact-9"
+      path: "artifact.dat"
+      compression-level: 9
