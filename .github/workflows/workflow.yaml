@@ -7,28 +7,28 @@ jobs:
     - uses: actions/checkout@v2
     - name: generate artifacts
       run: |
-        dd if=/dev/zero of=artifact.dat  bs=1M  count=8600
+        head -c 8600000000 /dev/urandom    > "./artifact.bin"
     - name: upload artifact compression 0
       uses: actions/upload-artifact@v4
       with:
         name: "artifact-0"
-        path: "artifact.dat"
+        path: "artifact.bin"
         compression-level: 0
     - name: upload artifact compression 3
       uses: actions/upload-artifact@v4
       with:
         name: "artifact-3"
-        path: "artifact.dat"
+        path: "artifact.bin"
         compression-level: 3
     - name: upload artifact compression 6
       uses: actions/upload-artifact@v4
       with:
         name: "artifact-6"
-        path: "artifact.dat"
+        path: "artifact.bin"
         compression-level: 6
     - name: upload artifact compression 9
       uses: actions/upload-artifact@v4
       with:
         name: "artifact-9"
-        path: "artifact.dat"
+        path: "artifact.bin"
         compression-level: 9
