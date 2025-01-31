@@ -1,6 +1,7 @@
 name: compression-test
 run-name: Github Actions Test ${{ github.run_id }}
-on: [push]jobs:
+on: [push]
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
