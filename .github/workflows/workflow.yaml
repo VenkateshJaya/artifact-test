@@ -7,7 +7,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: generate artifacts
       run: |
-        echo "rmm=test_value"
+        export "rmm=test_value"
         echo "VAR=${rmm}" >> "${GITHUB_OUTPUT}"
       id: set
     - name: Using output substitution
