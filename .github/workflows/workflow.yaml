@@ -13,6 +13,8 @@ jobs:
     - name: Using output substitution
       run: |
         echo "TEST=${{ steps.set.outputs.VAR }}_lib"
+    - name: Downloading artifact from a different repo
+      run: gh run download 13291957457 --repo rapidsai/rmm --name rmm_conda_cpp_cuda11_aarch64
     # - name: upload artifact compression 3
     #   uses: actions/upload-artifact@v4
     #   with:
