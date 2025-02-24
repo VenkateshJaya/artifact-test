@@ -1,11 +1,5 @@
 name: compression-test
-on:
-  workflow_call:
-    inputs:
-      myInput:
-        description: 'A custom input'
-        type: string
-        default: ${{ github.repository#*/ }}
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,7 +9,7 @@ jobs:
       run: |
         export "rmm=test_value"
         echo "VAR=${rmm}" >> "${GITHUB_OUTPUT}"
-        echo "REPO is ${{ inputs.myInput }}
+        echo "REPO is ${{ github.repository#*/ }}
       id: set
     - name: Using output substitution
       run: |
