@@ -9,7 +9,7 @@ jobs:
       run: |
         export "rmm=test_value"
         echo "VAR=${rmm}" >> "${GITHUB_OUTPUT}"
-        echo "REPO is ${{ github.repository#*/ }}
+        echo "REPO is ${{ github.repository }}
       id: set
     - name: Using output substitution
       run: |
