@@ -17,6 +17,7 @@ jobs:
     - name: Downloading artifact from a different repo
       run: |
           printenv GH_TOKEN
+          printenv GITHUB_RUN_ID
           mkdir temp
           gh run download 13291957457 --repo rapidsai/rmm --name rmm_conda_cpp_cuda11_aarch64 --dir temp
           ls temp
