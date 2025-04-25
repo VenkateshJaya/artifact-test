@@ -1,0 +1,7 @@
+name: calling-workflow
+on: [push]
+
+jobs:
+  primary-build:
+    uses: ./github/workflows/workflow.yaml
+    
